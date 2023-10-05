@@ -1,3 +1,106 @@
-<h1>
-    hello world
-</h1>
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Customer Churn Prediction</h1>
+
+    
+    <form action="{{ url_for('predict')}}"method="post">
+        <label for="Age">Age:</label>
+        <input type="text" name="Age" placeholder="In Integer" required="required" /><br>
+        <label for="Married">Married:</label>
+    	<input type="text" name="Married" placeholder=" 1 or 0" required="required" /><br>
+        <label for="Number of Dependents">Number of Dependents:</label>
+        <input type="text" name="Number of Dependents" placeholder="In Integer" required="required" /><br>
+        <label for="Number of Referrals">Number of Referrals:</label>
+        <input type="text" name="Number of Referrals" placeholder="In Integer" required="required" /><br>
+        <label for="Tenure in Months">Tenure in Months:</label>
+        <input type="text" name="Tenure in Months" placeholder="In Integer" required="required" /><br>
+        <label for="Phone Service">Phone Service:</label>
+        <input type="text" name="Phone Service" placeholder="1 or 0" required="required" /><br>
+        <label for="Avg Monthly Long Distance Charges">Avg Monthly Long Distance Charges:</label>
+        <input type="text" name="Avg Monthly Long Distance Charges" placeholder="In Float" required="required" /><br>
+        <label for="Multiple Lines">Multiple Lines:</label>
+        <input type="text" name="Multiple Lines" placeholder="1 or 0" required="required" /><br>
+        <label for="Internet Service">Internet Service:</label>
+        <input type="text" name="Internet Service" placeholder="In Integer" required="required" /><br>
+        <label for="Avg Monthly GB Download">Avg Monthly GB Download:</label>
+        <input type="text" name="Avg Monthly GB Download" placeholder="In Float" required="required" /><br>
+        <label for="Online Security">Online Security:</label>
+        <input type="text" name="Online Security" placeholder="1 or 0" required="required" /><br>
+        <label for="Online Backup">Online Backup:</label>
+        <input type="text" name="Online Backup" placeholder="1 or 0" required="required" /><br>
+        <label for="Device Protection Plan">Device Protection Plan:</label>
+        <input type="text" name="Device Protection Plan" placeholder="1 or 0" required="required" /><br>
+        <label for="Premium Tech Support">Premium Tech Support:</label>
+        <input type="text" name="Premium Tech Support" placeholder="1 or 0" required="required" /><br>
+        <label for="Streaming TV">Streaming TV</label>
+        <input type="text" name="Streaming TV" placeholder="1 or 0" required="required" /><br>
+        <label for="Streaming Movies">Streaming Movies:</label>
+        <input type="text" name="Streaming Movies" placeholder="1 or 0" required="required" /><br>
+        <label for="Streaming Music">Streaming Music:</label>
+        <input type="text" name="Streaming Music" placeholder="1 or 0" required="required" /><br>
+        <label for="Unlimited Data">Unlimited Data:</label>
+        <input type="text" name="Unlimited Data" placeholder="1 or 0" required="required" /><br>
+        <label for="Paperless Billing">Paperless Billing</label>
+        <input type="text" name="Paperless Billing" placeholder="1 or 0" required="required" /><br>
+        <label for="Monthly Charge">Monthly Charge:</label>
+        <input type="text" name="Monthly Charge" placeholder="In Float" required="required" /><br>
+        <label for="Total Charges">Total Charges:</label>
+        <input type="text" name="Total Charges" placeholder="In Float" required="required" /><br>
+        <label for="Total Refunds">Total Refunds:</label>
+        <input type="text" name="Total Refunds" placeholder="In Float" required="required" /><br>
+        <label for="Total Extra Data Charges">Total Extra Data Charges:</label>
+        <input type="text" name="Total Extra Data Charges" placeholder="In Integer" required="required" /><br>
+        <label for="Total Long Distance Charges">Total Long Distance Charges:</label>
+        <input type="text" name="Total Long Distance Charges" placeholder="In Float" required="required" /><br>
+        <label for="Total Revenue">Total Revenue:</label>
+        <input type="text" name="Total Revenue" placeholder="In Float" required="required" /><br>
+        <label for="Internet Type_Cable">Internet Type_Cable:</label>
+        <input type="text" name="Internet Type_Cable" placeholder="1 or 0" required="required" /><br>
+        <label for="Internet Type_DSL">Internet Type_DSL:</label>
+        <input type="text" name="Internet Type_DSL" placeholder="1 or 0" required="required" /><br>
+        <label for="Internet Type_Fiber Optic">Internet Type_Fiber Optic:</label>
+        <input type="text" name="Internet Type_Fiber Optic" placeholder="1 or 0" required="required" /><br>
+        <label for="Contract_Month-to-Month">Contract_Month-to-Month:</label>
+        <input type="text" name="Contract_Month-to-Month" placeholder="1 or 0" required="required" /><br>
+        <label for="Contract_One Year">Contract_One Year:</label>
+        <input type="text" name="Contract_One Year" placeholder= "1 or 0" required="required" /><br>
+        <label for="Contract_Two Year">Contract_Two Year:</label>
+        <input type="text" name="Contract_Two Year" placeholder="1 or 0" required="required" /><br>
+        <label for="Payment Method_Bank Withdrawal">Payment Method_Bank Withdrawal:</label>
+        <input type="text" name="Payment Method_Bank Withdrawal" placeholder="1 or 0" required="required" /><br>
+        <label for="Payment Method_Credit Card">Payment Method_Credit Card:</label>
+        <input type="text" name="Payment Method_Credit Card" placeholder="1 or o" required="required" /><br>
+        <label for="Payment Method_Mailed Check">Payment Method_Mailed Check:</label>
+        <input type="text" name="Payment Method_Mailed Check" placeholder="1 or 0" required="required" /><br>
+        <label for="Gender_Female">Gender_Female:</label>
+        <input type="text" name="Gender_Female" placeholder="1 or 0" required="required" /><br>
+        <label for="Gender_Male">Gender_Male:</label>
+        <input type="text" name="Gender_Male" placeholder="1 or 0" required="required" /><br>
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{predict_text}}
+
+</body>
+</html>
